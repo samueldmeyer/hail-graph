@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Hail History</title>
+  <!--d3-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+      <!--jQuery-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <!--<script src="http://dimplejs.org/dist/dimple.v2.0.0.min.js"></script>-->
+  <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+    <!-- Bootstrap 3.3.5 -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+
+  
+  <link rel="stylesheet" href="/static/main.css">
+  <script type="text/javascript" src="/static/hail.js"></script>
+  <script type="text/javascript" src="/bower_components/d3-tip/index.js"></script>
+  <!--Moment-->
+  <script type="text/javascript" src="/bower_components/moment/moment.js"></script>
+  <!--LoDash-->
+  <!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>-->
+</head>
+<body>
+  <div class="container-fluid site-top">
+    <h1 class="site-title text-center">Hail History</h1>
+    <br>
+  </div>
+  <div class="container">
+    <br>
+    <div class="col-md-8 col-md-offset-2"><p>Some places get all kinds of exciting weather, and every time it happens, everyone wants to know if it has happened before. Below, you can compare years to see that even though <a href="http://gazette.com/hailstorm-wreaks-havoc-on-colorado-springs-roads/article/1551172">this hail storm</a> in Colorado Springs was really large, there were other days that year where it was hailing in more areas around the city. If you want to look at other places, scroll down.</p><br></div>
+  </div>
+  <div class="container">
+    <h1 class="text-center">Hail events in Colorado Springs, CO</h1>
+    <h3 class="text-center"> (lat/long: -104.8213634, 38.8338816)</h3>
+  </div>
+  <svg class="co-sprg center-block"></svg>
+  <div class="container">
+  <div class="row"><div class="col-md-8 col-md-offset-2"><p>Enter your own location below to see the last couple years of data. Try it with just a few years first, as it takes a little while to get the data from <a href="http://www.ncdc.noaa.gov/swdi/#TileSearch">NOAA.</a></p></div><br></div>
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+    <form id="custom-location-form">
+      <div class="form-group col-md-12">
+        <label for="address">Address</label>
+        <input type="address" class="form-control" id="address" placeholder="123 Main St, Anytown, USA">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="start-year">Start year</label>
+        <input type="number" class="form-control" id="start-year" placeholder="2013" value="2013">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="end-year">End year</label>
+        <input type="number" class="form-control" id="end-year" placeholder="2015" value="2015">
+      </div>
+      <button type="submit" class="btn btn-primary match-left-col">Get graph</button>
+      <div id="loading" class="hidden match-left-col">Loading...</div>
+    </form>
+    </div>
+  </div>
+  <div class="container hidden">
+    <h1 class="text-center">Hail events</h1>
+    <h3 class="text-center"> (lat/long:)</h3>
+  </div>
+  <!-- <div class="row"> -->
+    <svg class="custom-location center-block"></svg>
+  <!-- </div> -->
+</body>
+</html>
